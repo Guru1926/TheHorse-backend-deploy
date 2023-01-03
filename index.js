@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const port = process.env.PORT || 3005
+const port = process.env.PORT || 3005;
 const connect = require("./db/connect");
 const productRouter = require("./routes/product.routes");
 const userRouter = require("./routes/user.routes");
@@ -16,6 +16,9 @@ app.use("/user", userRouter);
 app.use("/cart", cartRouter);
 app.use("/wishlist", wishlistRouter);
 app.use("/order", orderRouter);
+app.get('/*', (req, res) => {
+  res.send('Page Not found');
+})
 
 connect()
   .then(() => {
