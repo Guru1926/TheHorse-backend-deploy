@@ -16,9 +16,9 @@ app.use("/user", userRouter);
 app.use("/cart", cartRouter);
 app.use("/wishlist", wishlistRouter);
 app.use("/order", orderRouter);
-app.get('/*', (req, res) => {
-  res.send('Page Not found');
-})
+// app.get('/*', (req, res) => {
+//   res.send('Page Not found');
+// })
 
 connect()
   .then(() => {
