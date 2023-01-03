@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const port = process.env.PORT || 3005
 const connect = require("./db/connect");
 const productRouter = require("./routes/product.routes");
 const userRouter = require("./routes/user.routes");
@@ -18,8 +19,8 @@ app.use("/order", orderRouter);
 
 connect()
   .then(() => {
-    app.listen(3005, '0.0.0.0', () => {
-      console.log("server listening on port 3005");
+    app.listen(port, () => {
+      console.log(`server listening on port ${port}`);
     });
   })
   .catch((err) => {
