@@ -18,7 +18,7 @@ app.use("/order", orderRouter);
 
 connect()
   .then(() => {
-    app.listen(3005, () => {
+    app.listen(3005, '0.0.0.0', () => {
       console.log("server listening on port 3005");
     });
   })
